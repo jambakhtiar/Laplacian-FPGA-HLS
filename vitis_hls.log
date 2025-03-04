@@ -1,0 +1,44 @@
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'jam' on host 'jam-Precision-5510' (Linux_x86_64 version 6.5.0-35-generic) on Wed Jun 12 18:02:51 PKT 2024
+INFO: [HLS 200-10] On os Ubuntu 22.04.4 LTS
+INFO: [HLS 200-10] In directory '/home/jam/Downloads/Laplacian'
+INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script '/home/jam/Downloads/Laplacian/yeman/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: source /home/jam/Downloads/Laplacian/yeman/solution1/csim.tcl
+INFO: [HLS 200-1510] Running: open_project yeman 
+INFO: [HLS 200-10] Opening project '/home/jam/Downloads/Laplacian/yeman'.
+INFO: [HLS 200-1510] Running: set_top laplacian 
+INFO: [HLS 200-1510] Running: add_files hls.cpp 
+WARNING: [HLS 200-40] Cannot find design file 'hls.cpp'
+INFO: [HLS 200-1510] Running: add_files -tb yeman/.settings/bmpfunction.cpp 
+INFO: [HLS 200-10] Adding test bench file 'yeman/.settings/bmpfunction.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb yeman/.settings/test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'yeman/.settings/test.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/jam/Downloads/Laplacian/yeman/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu11p-flga2577-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu11p-flga2577-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+make: *** No rule to make target '../../../../bmpfunction.cpp', needed by 'obj/bmpfunction.o'.  Stop.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.15 seconds. CPU system time: 0.14 seconds. Elapsed time: 0.29 seconds; current allocated memory: 0.000 MB.
+4
+    while executing
+"source /home/jam/Downloads/Laplacian/yeman/solution1/csim.tcl"
+    invoked from within
+"hls::main /home/jam/Downloads/Laplacian/yeman/solution1/csim.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$newargs"
+    (procedure "hls_proc" line 16)
+    invoked from within
+"hls_proc [info nameofexecutable] $argv"
+INFO: [HLS 200-112] Total CPU user time: 2.75 seconds. Total CPU system time: 0.46 seconds. Total elapsed time: 3.01 seconds; peak allocated memory: 311.883 MB.
